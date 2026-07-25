@@ -48,7 +48,7 @@ pre code {
   border-radius: 12px;  
   padding: 20px;         
   margin: 20px auto; 
-  background: #fff;
+ /* background: #fff;*/
 }
 
 .condensed-terminal {
@@ -80,4 +80,9 @@ pre code {
     display: block;
     margin-left: 0px;
     box-sizing: border-box;
+}
+
+body {
+    background-image: url("assets/tiles/starquilt.gif");
+    background-repeat: repeat;
 }
