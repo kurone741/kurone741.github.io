@@ -49,6 +49,7 @@ pre code {
   padding: 20px;         
   margin: 20px auto; 
  /* background: #fff;*/
+  color: #000;
 }
 
 .condensed-terminal {
@@ -83,6 +84,8 @@ pre code {
 }
 
 body {
-    background-image: url("assets/tiles/starquilt.gif");
-    background-repeat: repeat;
+    background-image: url("assets/tiles/bgpinklattice.gif");
+    margin: 0;
+    position: relative;
 }
+
