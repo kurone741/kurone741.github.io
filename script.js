@@ -31,11 +31,19 @@ function injectNavbar() {
 
     // Injection
     navElement.innerHTML = `
-        <a href="${prefix}index.html">home</a> |
-        <a href="${prefix}blog/index.html">blog</a> |
-        <a href="${prefix}photos/index.html">photos</a> |
-        <a href="${prefix}projects/index.html">projects</a> |
-        <a href="${prefix}contact/index.html">contact</a>    
+         <aside class="left-sidebar">
+    <div class="panel">
+        <h2>nav</h2>
+	
+	<a href="/">Home</a><br>
+	<a href="/about">About</a><br>
+	<a href="/blog">Blog</a><br>
+	<a href="/projects">Projects</a><br>
+	<a href="/photos">Photography</a><br>
+	<a href="/music">Music</a><br>
+        <a href="/links">Links</a>
+    </div>
+</aside>
     `;
 }
 	const script = document.createElement("script");
