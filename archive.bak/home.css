@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+@font-face {
+  font-family: "Mondwest";
+  src: url('assets/fonts/ppmondwest-regular.otf');
+}
+
+* {
+  cursor: url('https://cdn.cursors-4u.net/css-previews/cute-cat-6a8a00c5-css.webp') 0 0, auto !important;
+}
+
+body {
+  font-family: "Source Serif 4", sans-serif;
+}
+
+html, body, nav{
+    font-size: 1rem;
+    font-weight:500;
+    font-family: "Source Serif 4", sans-serif;
+}
+
+h1 {    
+    font-family: "Source Serif 4", sans-serif;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    transform-origin: left;
+    font-weight: 500;
+}
+
+p, ul li {
+    font-size: 0.9rem;
+    max-width: 90%;
+    font-family: "Source Serif 4", sans-serif;
+    font-weight: 400;
+}
+
+nav {
+    font-size: 0.8rem;
+    font-family: "Source Serif 4", sans-serif;
+    margin-left: 5px;
+}
+
+pre code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.header {
+  font-size: 60px;
+  color: #0040ff;
+  align-items: center;
+  justify-items: center;
+  font-family: Mondwest;
+  position: absolute;
+  top: 400px;
+  z-index: 6;
+  }
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 16px;
+  /*border: 1px solid #a0a0a0;*/ 
+  border-radius: 12px;  
+  padding: 20px;         
+  margin: 20px auto; 
+  background-image: url("assets/tiles/cross.gif");
+  color: #000;
+}
+
+.favicon {
+	display: flex;
+    justify-content: center;
+}
+.condensed-terminal {
+    display: inline-block;   
+    transform: scaleX(0.75);   
+    transform-origin: left;   
+    letter-spacing: -0.06em; 
+}
+
+.projectassets-img {
+	max-width:      350px;
+	margin:         2px;
+	border-radius:  4px;
+	border:         1px solid #a0a0a0;
+}
+
+.welcbox {
+	width: 400px;
+	height: 600px;
+	background-color: #fff;
+	-webkit-box-shadow:0px 0px 192px 177px rgba(255,255,255,1);
+  	-moz-box-shadow: 0px 0px 192px 177px rgba(255,255,255,1);
+	box-shadow: 0px 0px 192px 177px rgba(255,255,255,1);
+}
+
+/* adaptable photo container(photos)*/
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px,1fr));
+    gap: 5px;
+    padding: 5px;
+}
+
+.gallery-grid img {
+    width: 100%;  
+    height: 360px;
+    object-fit: cover;  
+    border-radius: 2px; 
+    display: block;
+    margin-left: 0px;
+    box-sizing: border-box;
+}
+/*
+body {
+    background-image: url("assets/tiles/brown.png");
+    margin: 0;
+    position: relative;
+}
+*/
+
+body {
+	background-image: url("assets/tiles/cross.gif");
+}
+
+/*---------------crt--------------*/
+
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 20;
+  background-size: 100% 2px, 3px, 100%;
+  pointer-events: none;
+}

@@ -6,3 +6,7 @@
 .DS_Store
 Thumbs.db
 .aider*
+
+#enviornment variables
+.env
+.env*
