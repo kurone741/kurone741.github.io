@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>liangnb07</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="../script.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    </head>
+
+    <body>
+        <nav></nav>
+        <div id="nav-container"></div> 
+
+    <main>
+        <div class="container">
+        <article id="content">
+            <p style="color: gray;">文章加载中...</p>
+        </article>
+        </div>
+    </main>
+
+    <script>
+        async function loadMarkdownPost() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const markdownFile = urlParams.get('file');
+    const contentDiv = document.getElementById('content');
+
+    if (!markdownFile) {
+        contentDiv.innerHTML = "<p>错误：未指定要加载的文章。</p>";
+        return;
+    }
+
+    try {
+        const response = await fetch(`./${markdownFile}`);
+        
+        if (!response.ok) {
+            throw new Error("文章不存在");
+        }
+
+        let markdownText = await response.text();
+        
+        const lines = markdownText.split('\n');
+        let titleText = "";
+        let titleIndex = -1;
+
+        for (let i = 0; i < lines.length; i++) {
+            if (lines[i].startsWith('# ')) {
+                titleText = lines[i].replace('# ', '').trim();
+                titleIndex = i;
+                break;
+            }
+        }
+
+        if (titleIndex !== -1) {
+           
+            document.title = titleText + " - blog";
+
+            const h1Element = document.createElement('h1');
+            h1Element.textContent = titleText;
+            document.body.insertBefore(h1Element, document.body.firstChild);
+            lines.splice(titleIndex, 1);
+            markdownText = lines.join('\n');
+        }
+
+        contentDiv.innerHTML = marked.parse(markdownText);
+
+    } catch (error) {
+        console.error(error);
+        contentDiv.innerHTML = `<p>加载文章失败：路径可能不正确或文件不存在。</p>`;
+    }
+}
+
+loadMarkdownPost();
+    </script>
+
+    </body>
+
+</html>
